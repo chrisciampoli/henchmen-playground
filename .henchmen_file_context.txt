@@ -1,6 +1,89 @@
 ## Pre-Read Files (most relevant to your task)
 
 
+### tailwind.config.ts
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        navy: {
+          800: '#102338',
+          900: '#0B1A2E',
+        },
+        coral: {
+          400: '#F07A5C',
+          500: '#E85A3C',
+        },
+      },
+    },
+  },
+  plugins: [],
+}
+```
+
+### nuxt.config.ts
+```
+/** @type {import('nuxt').NuxtConfig} */
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  typescript: {
+    strict: true
+  },
+  css: [
+    '~/assets/css/main.css'
+  ],
+  modules: [
+    '@nuxtjs/tailwindcss'
+  ]
+})
+```
+
+### README.md
+```
+# henchmen-playground
+Test repo for Henchmen local development
+
+```
+
+### package.json
+```
+{
+  "name": "nuxt-scaffold",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^3.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.0.0",
+    "typescript": "^5.0.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.0.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-vue": "^9.0.0"
+  }
+}
+```
+
+### .henchmen_file_context.txt
+```
+## Pre-Read Files (most relevant to your task)
+
+
 ### nuxt.config.ts
 ```
 /** @type {import('nuxt').NuxtConfig} */
@@ -127,5 +210,6 @@ Test repo for Henchmen local development
 
 .henchmen_file_context.txt
 
+```
 ```
 ```
